@@ -15,6 +15,10 @@
 </template>
 
 <style scoped lang="scss">
+    .container {
+        background-color: white;
+    }
+
     img {
         max-width: 10%;
     }
