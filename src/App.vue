@@ -4,11 +4,13 @@
     import AppCollection from "./components/AppCollection.vue";
     import axios from "axios";
     import { store } from './store.js';
+    import AppLoader from "./components/AppLoader.vue";
 
     export default {
       components: {
         AppHeader,
-        AppCollection
+        AppCollection,
+        AppLoader
       },
       data () {
         return {
@@ -27,6 +29,7 @@
           }).then((response) => {
             store.cardsList = response.data.data
           });
+          store.isLoading = false;
         }
       },
       mounted() {
@@ -38,7 +41,8 @@
 <template>
     <AppHeader></AppHeader>
     <main>
-      <AppCollection></AppCollection>
+      <AppCollection v-if="!store.isLoading"></AppCollection>
+      <AppLoader v-else></AppLoader>
     </main>
 </template>
 
