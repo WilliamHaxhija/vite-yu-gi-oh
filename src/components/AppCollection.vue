@@ -16,10 +16,13 @@
       }
     }
   }
+
 </script>
 
 <template>
+
     <section class="p-5">
+
         <div class="container p-4">
           <AppResultNumber></AppResultNumber>
             <div class="row">
@@ -28,7 +31,9 @@
               </div>
             </div>
         </div>
+        
     </section>
+
 </template>
 
 <style scoped lang="scss">

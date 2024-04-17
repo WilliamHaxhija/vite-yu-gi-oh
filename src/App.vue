@@ -19,6 +19,7 @@
           store
         }
       },
+
       methods: {
         getCardsFromApi() {
           let apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
@@ -46,6 +47,7 @@
           });
           }
         },
+
       mounted() {
         this.getCardsFromApi(),
         this.getArchetypesFromApi()
@@ -57,6 +59,7 @@
 <template>
 
     <AppHeader></AppHeader>
+    
     <main>
       <AppSelect @searchArchetype="getCardsFromApi()"></AppSelect>
       <AppCollection v-if="!store.isLoading"></AppCollection>
