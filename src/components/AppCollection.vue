@@ -2,11 +2,13 @@
 
   import { store } from '../store.js';
   import SingleCard from './SingleCard.vue';
+  import AppResultNumber from "./AppResultNumber.vue";
   
   export default {
     name: 'AppCollection',
     components: {
-        SingleCard
+        SingleCard,
+        AppResultNumber
     },
     data () {
       return {
@@ -19,7 +21,7 @@
 <template>
     <section class="p-5">
         <div class="container p-4">
-            <div class="input-ctn bg-dark"></div>
+          <AppResultNumber></AppResultNumber>
             <div class="row">
               <div class="col d-flex flex-wrap justify-content-between">
                 <SingleCard v-for="card in store.cardsList" :cardInfo="card"></SingleCard>
@@ -30,12 +32,9 @@
 </template>
 
 <style scoped lang="scss">
+
   .container {
       background-color: white;
   }
 
-  .input-ctn {
-    height: 50px;
-    margin-bottom: -1rem;
-  }
 </style>
